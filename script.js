@@ -1,19 +1,17 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const introScreen = document.getElementById('intro-screen');
-    const mainContent = document.getElementById('main-content');
-
-    console.log("Page loaded. Waiting for click on intro screen...");
-
-    // Click anywhere on the intro screen to enter the site
-    introScreen.addEventListener('click', function() {
-        console.log("Intro screen clicked. Fading out...");
-
-        introScreen.classList.add('fade-out');
-
-        setTimeout(function() {
-            introScreen.style.display = 'none';
-            console.log("Intro screen hidden. Showing main content...");
-            mainContent.classList.add('fade-in');
-        }, 1000); // 1 second fade-out delay
+// Function to show the selected section and hide others
+function showSection(sectionId) {
+    // Hide all sections
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        section.classList.remove('active-section');
     });
+
+    // Show the selected section
+    const selectedSection = document.getElementById(sectionId);
+    selectedSection.classList.add('active-section');
+}
+
+// Default to showing the "About Us" section on page load
+document.addEventListener('DOMContentLoaded', function() {
+    showSection('about-section');
 });

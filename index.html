@@ -7,10 +7,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Intro Screen -->
-    <div id="intro-screen">
-        <h1>Click to Enter...</h1>
-    </div>
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div id="nav-logo">
+            <a href="#" onclick="showSection('about-section')"><img src="clublogo.png" alt="Club Logo" id="nav-club-logo"></a>
+        </div>
+        <ul id="nav-menu">
+            <li><a href="#" onclick="showSection('about-section')">About Us</a></li>
+            <li><a href="#" onclick="showSection('playing-cards')">Playing Cards</a></li>
+        </ul>
+    </nav>
 
     <!-- Main Content -->
     <div id="main-content">
@@ -23,18 +29,18 @@
         <!-- Transparent Gray Overlay -->
         <div id="overlay"></div>
 
-        <!-- Club Logo and Text (Near the top now) -->
-        <div id="header-content">
-            <img src="clublogo.png" alt="Club Logo" id="club-logo">
-            <h2>Bedrock Club</h2>
-        </div>
-
-        <!-- About Us Section -->
-        <div id="about-section">
+        <!-- About Us Section (Default) -->
+        <div id="about-section" class="section active-section">
             <h3>About Us</h3>
             <p>Welcome to the Bedrock Club! We are a Minecraft Bedrock community Discord server that values a super chill vibe. We host regular events, have an awesome trading card system, and provide a space for players to relax, trade, and have fun. Whether you're a casual player or looking for competitive events, you'll find something here!</p>
             <p>Join us on Discord and be a part of the fun:</p>
             <a href="https://discord.gg/KRupwemRHK" target="_blank" id="discord-link">Join Our Discord</a>
+        </div>
+
+        <!-- Playing Cards Section (Initially Hidden) -->
+        <div id="playing-cards" class="section">
+            <h3>Playing Cards</h3>
+            <p>Our community features an exclusive Minecraft Bedrock playing card system! Collect unique cards, trade them with friends, and participate in events where these cards can be used. Stay tuned for our upcoming card release and events!</p>
         </div>
 
         <!-- Optional: Theme Song -->

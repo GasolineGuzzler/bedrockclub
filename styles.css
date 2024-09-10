@@ -5,39 +5,63 @@ body, html {
     height: 100%;
     overflow: hidden;
     font-family: Arial, sans-serif;
-    background-color: #000; /* Fallback background */
+    background-color: #000;
 }
 
-/* Main content should now always be visible */
+/* Navigation Bar */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    padding: 0 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo in the top-left */
+#nav-logo img {
+    height: 40px;
+    width: auto;
+}
+
+/* Navigation menu */
+#nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+#nav-menu li {
+    display: inline;
+}
+
+#nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+#nav-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Main content */
 #main-content {
-    display: block;
-    height: 100%;
+    height: 100vh;
     position: relative;
-    z-index: 1;
+    overflow: hidden;
 }
 
-/* Fade-out effect for the intro screen */
-.fade-out {
-    opacity: 0;
-    transition: opacity 1s ease-out;
-}
-
-/* Fade-in effect for the main content */
-.fade-in {
-    display: block;
-    animation: fadeInEffect 1s ease-in forwards;
-}
-
-@keyframes fadeInEffect {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Video background */
+/* Background Video */
 #background-video {
     position: fixed;
     top: 0;
@@ -46,10 +70,9 @@ body, html {
     height: 100%;
     object-fit: cover;
     z-index: -2;
-    background-color: black; /* Fallback in case the video doesn’t load */
 }
 
-/* Transparent gray overlay */
+/* Transparent overlay */
 #overlay {
     position: fixed;
     top: 0;
@@ -57,57 +80,35 @@ body, html {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 0; /* Below the content */
+    z-index: -1;
 }
 
-/* Header content (logo and title near the top) */
-#header-content {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -20%);
+/* Section styling */
+.section {
+    display: none;
     text-align: center;
-    z-index: 1;
     color: white;
-}
-
-#club-logo {
-    width: 150px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-#header-content h2 {
-    font-size: 2.5em;
-    margin: 0;
-    font-family: 'Arial Black', sans-serif;
-}
-
-/* About Us Section (Centered in the middle) */
-#about-section {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding: 80px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
     width: 80%;
-    text-align: center;
-    z-index: 1;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    padding: 20px;
+    margin: 20px auto;
     border-radius: 10px;
 }
 
-#about-section h3 {
-    font-size: 2em;
-    margin-bottom: 10px;
+.active-section {
+    display: block; /* Only the active section is visible */
 }
 
-#about-section p {
-    font-size: 1.2em;
+#about-section h3, #playing-cards h3 {
+    font-size: 2.5em;
     margin-bottom: 20px;
 }
 
+#about-section p, #playing-cards p {
+    font-size: 1.2em;
+}
+
+/* Discord Link */
 #discord-link {
     display: inline-block;
     padding: 10px 20px;
