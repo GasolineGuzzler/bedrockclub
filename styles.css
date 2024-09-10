@@ -11,7 +11,7 @@ body, html {
 #main-content {
     display: none;
     height: 100%;
-    background-color: red; /* Fallback background color for testing */
+    background-color: red; /* Add red for visibility testing */
 }
 
 /* Fade-out effect for the intro screen */
@@ -41,9 +41,9 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Make sure the video covers the entire screen */
     z-index: -2;
-    pointer-events: none; /* Ensure it doesn’t block interaction */
+    pointer-events: none; /* Prevent blocking clicks */
 }
 
 /* Centered content (logo and text) */
@@ -54,7 +54,7 @@ body, html {
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 1;
-    color: white;
+    color: white; /* Ensure the text is visible */
 }
 
 #club-logo {
