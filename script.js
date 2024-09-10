@@ -9,6 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
             introScreen.style.display = 'none';
             mainContent.classList.add('fade-in');
-        }, 1000);
+        }, 1000); // 1 second fade-out delay
     });
 });

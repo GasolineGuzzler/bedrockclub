@@ -5,18 +5,21 @@ body, html {
     height: 100%;
     overflow: hidden;
     font-family: Arial, sans-serif;
+    background-color: black; /* Fallback background for visibility */
 }
 
 /* Hide the main content initially */
 #main-content {
-    display: none;
+    display: none; /* Will be shown after intro fades out */
     height: 100%;
-    background-color: red; /* Add red for visibility testing */
+    background-color: red; /* Use red background for debugging */
+    position: relative; /* Make sure it positions relative to the page */
 }
 
 /* Fade-out effect for the intro screen */
 .fade-out {
     opacity: 0;
+    transition: opacity 1s ease-out;
 }
 
 /* Fade-in effect for the main content */
@@ -41,9 +44,21 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Make sure the video covers the entire screen */
+    object-fit: cover;
     z-index: -2;
-    pointer-events: none; /* Prevent blocking clicks */
+    display: block; /* Make sure the video is visible */
+    background-color: black; /* Fallback in case video doesn’t load */
+}
+
+/* Transparent gray overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent gray */
+    z-index: -1; /* On top of the video, but below the content */
 }
 
 /* Centered content (logo and text) */
@@ -53,8 +68,8 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 1;
-    color: white; /* Ensure the text is visible */
+    z-index: 1; /* Ensure content is on top of everything */
+    color: white;
 }
 
 #club-logo {
