@@ -5,15 +5,16 @@ body, html {
     height: 100%;
     overflow: hidden;
     font-family: Arial, sans-serif;
-    background-color: black; /* Fallback background for visibility */
+    background-color: #000; /* Fallback background */
 }
 
-/* Hide the main content initially */
+/* Make sure the main content is visible for debugging */
 #main-content {
-    display: none; /* Will be shown after intro fades out */
+    display: block; /* Force display for testing */
     height: 100%;
-    background-color: red; /* Use red background for debugging */
-    position: relative; /* Make sure it positions relative to the page */
+    background-color: red; /* Use red for visibility testing */
+    position: relative;
+    z-index: 1;
 }
 
 /* Fade-out effect for the intro screen */
@@ -46,8 +47,7 @@ body, html {
     height: 100%;
     object-fit: cover;
     z-index: -2;
-    display: block; /* Make sure the video is visible */
-    background-color: black; /* Fallback in case video doesn’t load */
+    background-color: black; /* Fallback in case the video doesn’t load */
 }
 
 /* Transparent gray overlay */
@@ -57,8 +57,8 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Transparent gray */
-    z-index: -1; /* On top of the video, but below the content */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0; /* Below the content */
 }
 
 /* Centered content (logo and text) */
@@ -68,7 +68,7 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 1; /* Ensure content is on top of everything */
+    z-index: 1;
     color: white;
 }
 
